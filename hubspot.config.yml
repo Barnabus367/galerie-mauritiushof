@@ -1,5 +1,5 @@
 defaultPortal: production
 portals:
   - name: production
-    portalId: ${HUBSPOT_ACCOUNT_ID}
-    personalAccessKey: ${HUBSPOT_PERSONAL_ACCESS_KEY}
+    portalId: 7913768
+    personalAccessKey: pat-na1-b95d0e65-3250-47b6-aaa1-b5c2207206bd
