@@ -20,7 +20,7 @@ jobs:
         run: npm install -g @hubspot/cli
 
       - name: Deploy to HubSpot
+        env:
+          HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
         run: |
-          echo "${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}" | npx hs auth personalaccesskey --account ${{ vars.HUBSPOT_ACCOUNT_ID }} --personalAccessKey -
-          npx hs upload galerie-mauritiushof galerie-mauritiushof
-
+          npx hs upload galerie-mauritiushof galerie-mauritiushof --account ${{ vars.HUBSPOT_ACCOUNT_ID }}
