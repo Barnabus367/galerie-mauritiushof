@@ -24,4 +24,5 @@ jobs:
           sed "s/ACCOUNT_ID_PLACEHOLDER/${{ vars.HUBSPOT_ACCOUNT_ID }}/g; s/ACCESS_KEY_PLACEHOLDER/${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}/g" hubspot.config.ci.yml > hubspot.config.yml
 
       - name: Deploy to HubSpot
-        run: npx hs upload galeriemauritiushof galeriemauritiushof --account ${{ vars.HUBSPOT_ACCOUNT_ID }}
+        run: npx hs upload galeriemauritiushof galeriemauritiushof --account 7913768
+
