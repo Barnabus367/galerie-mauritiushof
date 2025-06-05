@@ -1,0 +1,5 @@
+defaultPortal: production
+portals:
+  - name: production
+    portalId: ${HUBSPOT_ACCOUNT_ID}
+    personalAccessKey: ${HUBSPOT_PERSONAL_ACCESS_KEY}
