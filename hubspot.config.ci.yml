@@ -1,0 +1,5 @@
+defaultPortal: production
+portals:
+  - name: production
+    portalId: ACCOUNT_ID_PLACEHOLDER
+    personalAccessKey: ACCESS_KEY_PLACEHOLDER
