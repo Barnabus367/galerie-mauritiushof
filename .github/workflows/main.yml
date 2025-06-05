@@ -6,16 +6,21 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Deploy to HubSpot CMS
-        uses: HubSpot/cms-deploy-action@main
-
-
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          src_dir: galeriemauritiushof
-          dest_dir: galeriemauritiushof
-          account_id: ${{ vars.HUBSPOT_ACCOUNT_ID }}
-          personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+          node-version: '20'
+
+      - name: Install HubSpot CLI
+        run: npm install -g @hubspot/cli
+
+      - name: Deploy to HubSpot
+        run: |
+          echo "${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}" | npx hs auth personalaccesskey --account ${{ vars.HUBSPOT_ACCOUNT_ID }} --personalAccessKey -
+          npx hs upload galerie-mauritiushof galerie-mauritiushof
+
