@@ -1,0 +1,30 @@
+<!--
+  templateType: module
+  label: Header
+  isAvailableForNewContent: true
+-->
+<header class="site-header">
+  <div class="container-fluid px-0">
+    <div class="header-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="{{ module.logo_image.src }}" alt="{{ module.logo_image.alt }}" width="180" class="nav-logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto">
+              {% for item in module.menu_items %}
+                <li class="nav-item">
+                  <a class="nav-link{% if item.active %} active{% endif %}" href="{{ item.url }}">{{ item.label }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

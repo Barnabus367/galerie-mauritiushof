@@ -1,0 +1,60 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Galerie Mauritiushof - Startseite
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  <!-- Hero Section -->
+  {% module "home_hero"
+    path="../../modules/hero.module/module.html", 
+    label="Hero Banner",
+    hero_background={ 
+      "src": ""
+    },
+    hero_logo={
+      "src": "",
+      "alt": "Galerie Mauritiushof"
+    },
+    hero_title="Galerie Mauritiushof",
+    hero_subtitle="Kunst und Kultur in Bad Zurzach",
+    hero_text="Entdecken Sie zeitgenössische Kunst in historischem Ambiente."
+  %}
+  
+  <!-- Aktuelle Ausstellung -->
+  {% module "aktuelle_ausstellung"
+    path="../../modules/ausstellung.module/module.html", 
+    label="Aktuelle Ausstellung",
+    title="Aktuelle Ausstellung",
+    exhibition_image={
+      "src": "",
+      "alt": "Aktuelle Ausstellung"
+    },
+    exhibition_badge="Aktuell",
+    exhibition_title="Ausstellungstitel",
+    exhibition_dates="Datum der Ausstellung",
+    exhibition_description="<p>Beschreibung der aktuellen Ausstellung</p>",
+    exhibition_artist="Künstlername",
+    exhibition_link="/exhibitions",
+    exhibition_button_text="Mehr erfahren"
+  %}
+  
+  <!-- Galerie -->
+  {% module "galerie_section"
+    path="../../modules/galerie.module/module.html", 
+    label="Künstlerinnen und Künstler",
+    section_title="Künstlerinnen und Künstler",
+    gallery_items=[
+      {
+        "image": {
+          "src": "",
+          "alt": "Kunstwerk 1"
+        },
+        "title": "Titel des Kunstwerks",
+        "artist": "Name des Künstlers / der Künstlerin",
+        "description": "<p>Beschreibung des Kunstwerks</p>"
+      }
+    ]
+  %}
+{% endblock %}

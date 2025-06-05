@@ -1,0 +1,79 @@
+{
+  "name": "Galerie Mauritiushof",
+  "author": {
+    "name": "Galerie Mauritiushof",
+    "email": "galerie@mauritiushof.ch"
+  },
+  "description": "Ein Theme für die Galerie Mauritiushof Website",
+  "version": "1.0.0",
+  "responsive": true,
+  "enable_domain_stylesheets": false,
+  "global_colors": {
+    "primary": {
+      "color": "#212529",
+      "label": "Primärfarbe"
+    },
+    "secondary": {
+      "color": "#6c757d",
+      "label": "Sekundärfarbe"
+    },
+    "accent": {
+      "color": "#dc3545",
+      "label": "Akzentfarbe"
+    }
+  },
+  "global_fonts": {
+    "primary": {
+      "font": "Montserrat",
+      "variant": "regular",
+      "sizes": {
+        "small": 14,
+        "medium": 16,
+        "large": 18
+      },
+      "label": "Primäre Schriftart"
+    },
+    "secondary": {
+      "font": "Cormorant Garamond",
+      "variant": "regular",
+      "sizes": {
+        "small": 18,
+        "medium": 24,
+        "large": 36
+      },
+      "label": "Sekundäre Schriftart"
+    }
+  },
+  "modules": [
+    {
+      "name": "header",
+      "path": "./modules/header.module/module.html",
+      "global": true
+    },
+    {
+      "name": "footer",
+      "path": "./modules/footer.module/module.html",
+      "global": true
+    },
+    {
+      "name": "hero",
+      "path": "./modules/hero.module/module.html",
+      "global": false
+    },
+    {
+      "name": "ausstellung",
+      "path": "./modules/ausstellung.module/module.html",
+      "global": false
+    },
+    {
+      "name": "galerie",
+      "path": "./modules/galerie.module/module.html",
+      "global": false
+    },
+    {
+      "name": "kontakt",
+      "path": "./modules/kontakt.module/module.html",
+      "global": false
+    }
+  ]
+}

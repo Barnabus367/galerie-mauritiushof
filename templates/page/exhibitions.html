@@ -1,0 +1,90 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Galerie Mauritiushof - Ausstellungen
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  <!-- Hero Section -->
+  {% module "exhibitions_hero"
+    path="../../modules/hero.module/module.html", 
+    label="Hero Banner",
+    hero_background={ 
+      "src": ""
+    },
+    hero_logo={
+      "src": "",
+      "alt": "Galerie Mauritiushof"
+    },
+    hero_title="Ausstellungen",
+    hero_subtitle="Aktuelle und vergangene Ausstellungen",
+    hero_text="Entdecken Sie die Vielfalt der Kunst in der Galerie Mauritiushof."
+  %}
+  
+  <!-- All Exhibitions Section -->
+  <section class="exhibitions-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Ausstellungen</h2>
+      
+      <!-- Current Exhibition -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h3 class="mb-4">Aktuelle Ausstellung</h3>
+          {% module "current_exhibition"
+            path="../../modules/ausstellung.module/module.html", 
+            label="Aktuelle Ausstellung",
+            title="",
+            exhibition_image={
+              "src": "",
+              "alt": "Aktuelle Ausstellung"
+            },
+            exhibition_badge="Aktuell",
+            exhibition_title="Ausstellungstitel",
+            exhibition_dates="Datum der Ausstellung",
+            exhibition_description="<p>Beschreibung der aktuellen Ausstellung</p>",
+            exhibition_artist="Künstlername",
+            exhibition_link="#",
+            exhibition_button_text="Mehr erfahren"
+          %}
+        </div>
+      </div>
+      
+      <!-- Past Exhibitions -->
+      <div class="row">
+        <div class="col-12">
+          <h3 class="mb-4">Vergangene Ausstellungen</h3>
+          
+          <div class="row g-4">
+            <!-- Vergangene Ausstellungen als Galerie-Module -->
+            {% module "past_exhibitions"
+              path="../../modules/galerie.module/module.html", 
+              label="Vergangene Ausstellungen",
+              section_title="",
+              gallery_items=[
+                {
+                  "image": {
+                    "src": "",
+                    "alt": "Vergangene Ausstellung 1"
+                  },
+                  "title": "Ausstellungstitel 1",
+                  "artist": "Künstlername 1",
+                  "description": "<p>Beschreibung der Ausstellung</p>"
+                },
+                {
+                  "image": {
+                    "src": "",
+                    "alt": "Vergangene Ausstellung 2"
+                  },
+                  "title": "Ausstellungstitel 2",
+                  "artist": "Künstlername 2",
+                  "description": "<p>Beschreibung der Ausstellung</p>"
+                }
+              ]
+            %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

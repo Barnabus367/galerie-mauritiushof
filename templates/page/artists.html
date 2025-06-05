@@ -1,0 +1,69 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Galerie Mauritiushof - Künstler
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  <!-- Hero Section -->
+  {% module "artists_hero"
+    path="../../modules/hero.module/module.html", 
+    label="Hero Banner",
+    hero_background={ 
+      "src": ""
+    },
+    hero_logo={
+      "src": "",
+      "alt": "Galerie Mauritiushof"
+    },
+    hero_title="Künstlerinnen & Künstler",
+    hero_subtitle="Entdecken Sie die Künstler der Galerie Mauritiushof",
+    hero_text="Lernen Sie die talentierten Künstlerinnen und Künstler kennen, die in unserer Galerie ausgestellt haben."
+  %}
+  
+  <!-- Artists Section -->
+  <section class="artists-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Künstlerinnen & Künstler</h2>
+      
+      <!-- Artist Gallery -->
+      <div class="row g-4">
+        {% module "artists_gallery"
+          path="../../modules/galerie.module/module.html", 
+          label="Künstler Galerie",
+          section_title="",
+          gallery_items=[
+            {
+              "image": {
+                "src": "",
+                "alt": "Künstler 1"
+              },
+              "title": "Künstlername 1",
+              "artist": "Künstlergattung",
+              "description": "<p>Biografie des Künstlers / der Künstlerin</p>"
+            },
+            {
+              "image": {
+                "src": "",
+                "alt": "Künstler 2"
+              },
+              "title": "Künstlername 2",
+              "artist": "Künstlergattung",
+              "description": "<p>Biografie des Künstlers / der Künstlerin</p>"
+            },
+            {
+              "image": {
+                "src": "",
+                "alt": "Künstler 3"
+              },
+              "title": "Künstlername 3",
+              "artist": "Künstlergattung",
+              "description": "<p>Biografie des Künstlers / der Künstlerin</p>"
+            }
+          ]
+        %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

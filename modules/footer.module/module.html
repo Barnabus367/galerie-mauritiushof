@@ -1,0 +1,63 @@
+<!--
+  templateType: module
+  label: Footer
+  isAvailableForNewContent: true
+-->
+<footer class="footer mt-5 bg-dark text-white py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Stiftung Logo und Info -->
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <div class="footer-logo mb-4">
+          <img src="{{ module.footer_logo.src }}" alt="{{ module.footer_logo.alt }}" class="mb-3" style="max-width: 240px; filter: brightness(0) invert(1); opacity: 0.9;">
+        </div>
+        <p class="footer-text" style="color: rgba(255, 255, 255, 0.7);">{{ module.footer_text }}</p>
+      </div>
+      
+      <!-- Kontaktinformationen -->
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <h5 class="footer-heading mb-3">{{ module.contact_title }}</h5>
+        <ul class="footer-contact list-unstyled">
+          <li class="mb-2" style="color: rgba(255, 255, 255, 0.7);">
+            <i class="fa fa-map-marker-alt me-2"></i> {{ module.address_line1 }}
+          </li>
+          <li class="mb-2" style="color: rgba(255, 255, 255, 0.7);">
+            <i class="fa fa-map-marker-alt me-2 opacity-0"></i> {{ module.address_line2 }}
+          </li>
+          <li class="mb-2" style="color: rgba(255, 255, 255, 0.7);">
+            <i class="fa fa-map-marker-alt me-2 opacity-0"></i> {{ module.address_line3 }}
+          </li>
+          <li class="mb-2" style="color: rgba(255, 255, 255, 0.7);">
+            <i class="fa fa-phone me-2"></i> {{ module.phone }}
+          </li>
+          <li class="mb-2">
+            <i class="fa fa-envelope me-2"></i> <a href="mailto:{{ module.email }}" class="text-white">{{ module.email }}</a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Öffnungszeiten und Links -->
+      <div class="col-lg-4">
+        <h5 class="footer-heading mb-3">{{ module.hours_title }}</h5>
+        <p style="color: rgba(255, 255, 255, 0.7);">{{ module.opening_hours }}</p>
+        
+        <h5 class="footer-heading mb-3 mt-4">{{ module.links_title }}</h5>
+        <ul class="footer-links list-unstyled">
+          {% for item in module.footer_links %}
+            <li class="mb-2">
+              <a href="{{ item.link }}" class="text-white" style="opacity: 0.7; text-decoration: none;">{{ item.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div class="footer-bottom pt-4 mt-4 border-top text-center" style="border-color: rgba(255, 255, 255, 0.1) !important; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6);">
+      <p class="mb-0">{{ module.copyright_text }} <a href="{{ module.stiftung_link }}" class="text-white" target="_blank">{{ module.stiftung_name }}</a>.</p>
+      <p class="mb-0 mt-2">
+        <a href="{{ module.impressum_link }}" class="text-white">{{ module.impressum_text }}</a>
+      </p>
+    </div>
+  </div>
+</footer>

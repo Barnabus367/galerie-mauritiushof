@@ -1,0 +1,46 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Galerie Mauritiushof - Kontakt
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  <!-- Hero Section -->
+  {% module "contact_hero"
+    path="../../modules/hero.module/module.html", 
+    label="Hero Banner",
+    hero_background={ 
+      "src": ""
+    },
+    hero_logo={
+      "src": "",
+      "alt": "Galerie Mauritiushof"
+    },
+    hero_title="Kontakt",
+    hero_subtitle="Nehmen Sie Kontakt mit uns auf",
+    hero_text="Wir freuen uns, von Ihnen zu hören."
+  %}
+  
+  <!-- Contact Section -->
+  {% module "contact_section"
+    path="../../modules/kontakt.module/module.html", 
+    label="Kontakt",
+    section_title="Kontakt",
+    contact_title="Kontaktieren Sie uns",
+    contact_subtitle="Wir freuen uns über Ihre Nachricht und antworten so schnell wie möglich.",
+    address_title="Adresse",
+    address_line1="Mauritiushof",
+    address_line2="Quellenstrasse 30",
+    address_line3="5330 Bad Zurzach",
+    phone_title="Telefon",
+    phone="+41 56 249 24 12",
+    email_title="E-Mail",
+    email="galerie@mauritiushof.ch",
+    form_title="Nachricht senden",
+    form_subtitle="Füllen Sie das Formular aus und wir melden uns bei Ihnen.",
+    form_success_message="Vielen Dank für Ihre Nachricht! Wir werden uns so schnell wie möglich bei Ihnen melden.",
+    form_error_message="Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    map_embed_code="<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2676.7731034983984!2d8.288104476441018!3d47.586736472198764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47906e3962a24833%3A0x7f4b813b0331f866!2sQuellenstrasse%2030%2C%205330%20Bad%20Zurzach%2C%20Schweiz!5e0!3m2!1sde!2sde!4v1684917854322!5m2!1sde!2sde\" width=\"100%\" height=\"400\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+  %}
+{% endblock %}

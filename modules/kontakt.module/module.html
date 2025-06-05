@@ -1,0 +1,64 @@
+<!--
+  templateType: module
+  label: Kontakt
+  isAvailableForNewContent: true
+-->
+<section class="contact-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">{{ module.section_title }}</h2>
+    
+    <div class="row">
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <div class="contact-info pe-lg-4">
+          <h3 class="mb-4">{{ module.contact_title }}</h3>
+          <p class="mb-4">{{ module.contact_subtitle }}</p>
+          
+          <div class="mb-4">
+            <h5 class="mb-3">{{ module.address_title }}</h5>
+            <p class="mb-1">{{ module.address_line1 }}</p>
+            <p class="mb-1">{{ module.address_line2 }}</p>
+            <p>{{ module.address_line3 }}</p>
+          </div>
+          
+          <div class="mb-4">
+            <h5 class="mb-3">{{ module.phone_title }}</h5>
+            <p><a href="tel:{{ module.phone }}" class="text-dark">{{ module.phone }}</a></p>
+          </div>
+          
+          <div>
+            <h5 class="mb-3">{{ module.email_title }}</h5>
+            <p><a href="mailto:{{ module.email }}" class="text-dark">{{ module.email }}</a></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-7">
+        <div class="contact-form-container p-4 bg-light rounded shadow-sm">
+          <h4 class="mb-3">{{ module.form_title }}</h4>
+          <p class="mb-4">{{ module.form_subtitle }}</p>
+          
+          {% form 
+            name="kontaktformular",
+            form_to_use="{{ name='kontaktformular' }}"
+          %}
+          {% end_form %}
+          
+          <div class="form-success-message alert alert-success mt-3" style="display: none;">
+            {{ module.form_success_message }}
+          </div>
+          <div class="form-error-message alert alert-danger mt-3" style="display: none;">
+            {{ module.form_error_message }}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="map-container">
+          {{ module.map_embed_code }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Galerie Mauritiushof - Geschichte
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  <!-- Hero Section -->
+  {% module "geschichte_hero"
+    path="../../modules/hero.module/module.html", 
+    label="Hero Banner",
+    hero_background={ 
+      "src": ""
+    },
+    hero_logo={
+      "src": "",
+      "alt": "Galerie Mauritiushof"
+    },
+    hero_title="Geschichte",
+    hero_subtitle="Die Geschichte der Galerie Mauritiushof",
+    hero_text="Erfahren Sie mehr über die Geschichte und Entwicklung der Galerie Mauritiushof."
+  %}
+  
+  <!-- Geschichte Content -->
+  <section class="geschichte-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Geschichte</h2>
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- Content -->
+          <div class="geschichte-content mb-5">
+            {{ content.geschichte_content }}
+          </div>
+          
+          <!-- Timeline -->
+          <div class="timeline-section mt-5">
+            <h3 class="text-center mb-5">Zeitstrahl</h3>
+            
+            <div class="timeline">
+              {% for item in content.timeline_items %}
+                <div class="timeline-item">
+                  <div class="timeline-year">
+                    <span>{{ item.year }}</span>
+                  </div>
+                  <div class="timeline-content">
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.description }}</p>
+                    {% if item.image.src %}
+                      <img src="{{ item.image.src }}" alt="{{ item.title }}" class="img-fluid rounded mt-3">
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

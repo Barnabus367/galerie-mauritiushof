@@ -1,0 +1,20 @@
+<!--
+  templateType: module
+  label: Hero
+  isAvailableForNewContent: true
+-->
+<section class="hero-section d-flex align-items-center justify-content-center text-center position-relative">
+  <div class="hero-bg parallax-bg" style="background-image: url({{ module.hero_background.src }});"></div>
+  <div class="container position-relative z-index-1">
+    <div class="hero-content">
+      <div class="d-flex justify-content-center mb-4">
+        <div class="hero-logo-container">
+          <img src="{{ module.hero_logo.src }}" alt="{{ module.hero_logo.alt }}" class="hero-logo">
+        </div>
+      </div>
+      <h1 class="display-4 text-white mb-2 hero-title">{{ module.hero_title }}</h1>
+      <p class="lead text-white mb-1 hero-subtitle">{{ module.hero_subtitle }}</p>
+      <p class="text-white mb-4 hero-text">{{ module.hero_text }}</p>
+    </div>
+  </div>
+</section>
