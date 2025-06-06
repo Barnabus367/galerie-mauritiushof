@@ -2,4 +2,4 @@ defaultPortal: production
 portals:
   - name: production
     portalId: 7913768
-    personalAccessKey: pat-na1-b95d0e65-3250-47b6-aaa1-b5c2207206bd
+    personalAccessKey: pat-na1-629a2c88-fd61-4e8d-a2eb-5d1cb728fcbe
